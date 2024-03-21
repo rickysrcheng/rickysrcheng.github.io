@@ -19,7 +19,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hi! I'm Ricky Cheng and I'm currently seeking a software engineering position.
+Hi! I'm Ricky Cheng and I'm an incoming PhD student in Computer Science at the [University of Connecticut](https://uconn.edu) for Fall 2024.
 
 I graduated from [University of California, Irvine](https://uci.edu) with an MS in Computer Science in 2023. Previously, I was a testing engineer at Microsoft. Before that, I was completing my B.S. in Computer Engineering at the [University of Illinois at Urbana-Champaign](https://illinois.edu).
 
