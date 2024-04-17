@@ -36,6 +36,15 @@
   "volunteer": [],
   "education": [
     {
+      "institution": "University of Connecticut",
+      "url": "https://uconn.edu/",
+      "area": "Computer Science",
+      "studyType": "Ph.D.",
+      "startDate": "2024-08",
+      "endDate": "TBD",
+      "score": ""
+    },
+    {
       "institution": "University of California, Irvine",
       "url": "https://www.uci.edu/",
       "area": "Computer Science",

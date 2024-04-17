@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Rotary Positional Embedding
+title: "[P] Rotary Positional Embedding"
 date: 2023-10-20 17:30:00-0400
 description: Notes about RoPE
 tags: nlp transformer machine-learning
-categories: machine-learning nlp
+categories: machine-learning nlp paper-reading
 related_posts: false
 ---
 
@@ -16,7 +16,9 @@ related_posts: false
 - Transformer models computes all the data in parallel with no mechanism that implicitly injects positional information to any data
 - Thus, positional information must be applied externally
 
-## Absolute Position Encoding
+## Background Materials
+
+### Absolute Position Encoding
 - The original Transformer paper by [Vaswani et al](https://arxiv.org/abs/1706.03762) employed absolute position encoding that is added to the vector after the embedding layer using the following formula
 
     \begin{align}
@@ -31,7 +33,7 @@ related_posts: false
 - Each dimension corresponds to a sinusoid with wavelengths ranging from $$2\pi$$ to $$10000\cdot 2 \pi$$. Thus, in the typical usecase, it is improbable that two tokens would share the same positional encoding.
 - The position encoding can also be learned, but using a function may allow the model to extrapolate positional information for sequences with lengths longer than any lengths that the model was trained on.
 
-## Complex Numbers
+### Complex Numbers
 The underlying principles of RoPE relies on complex algebra. To be honest, I felt a little embarrassed because I had absolutely no understanding of the paper upon the first few reads until I went back to refresh my complex numbers. 
 
 - Complex numbers take the form of $$a + bi$$, where $$a$$ and $$b$$ are real numbers and $$i=\sqrt{-1}$$ is the imaginary unit.
@@ -163,6 +165,4 @@ The underlying principles of RoPE relies on complex algebra. To be honest, I fel
     \end{align}
     $$
     
-
-
-    - A big part of my confusion stems from the fact that this equivalence is given as true: $$\mathbf{q}\mathbf{k} = \text{Re}(\mathbf{q}^* \mathbf{k})$$, which it is but I didn't know how it got there since the vectors $$\mathbf{q}, \mathbf{k}$$ are reused and the authors are relying on the readers to implicitly know if the vector is $$\mathbb{R}^d$$ or $$\mathbb{C}^{d/2}$$. If one isn't being careful and assumed both vectors are in $$\mathbb{R}^d$$, then one can observe that the complex conjugate of a real vector is itself, so $$qk = q^*k$$, which means $$qk = \text{Re}(q^*k)$$, but this isn't the point being made in these papers.
+    - A big part of my confusion stems from the fact that this equivalence is given as true: $$\mathbf{q}\mathbf{k} = \text{Re}(\mathbf{q}^* \mathbf{k})$$, which it is but I didn't know how it got there since the vectors $$\mathbf{q}, \mathbf{k}$$ are reused and the authors are relying on the readers to implicitly know if the vector is $$\mathbb{R}^d$$ or $$\mathbb{C}^{d/2}$$. If one isn't being careful and assumed both vectors are in $$\mathbb{R}^d$$, then one can observe that the complex conjugate of a real vector is itself, so $$qk = q^*k$$, which means $$qk = \text{Re}(q^*k)$$, but this isn't the point being made in this paper.
