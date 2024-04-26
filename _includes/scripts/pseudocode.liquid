@@ -4,11 +4,11 @@
     window.MathJax = {
       tex: {
         inlineMath: [
-          ['$', '$'],
+          ['$$', '$$'],
           ['\\(', '\\)'],
         ],
         displayMath: [
-          ['$$', '$$'],
+          ['$', '$'],
           ['\\[', '\\]'],
         ],
         processEscapes: true,
@@ -42,6 +42,7 @@
           /* embed the visualization in the container */
           pseudocode.renderElement(pseudoCodeElement);
         });
+        MathJax.typeset();
       }
     };
   </script>
